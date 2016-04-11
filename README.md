@@ -1,2 +1,2 @@
 # AsparagusNetwork
-Test
+Test task - social network of asparagus fans.
