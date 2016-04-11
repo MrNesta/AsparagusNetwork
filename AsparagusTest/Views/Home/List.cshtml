@@ -1,0 +1,18 @@
+﻿@model IEnumerable<AsparagusTest.Models.User>
+
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+
+<ul>
+    @foreach(var u in Model)
+    {
+        foreach (var f in u.Foods)
+	{
+            <li>@u.Name @f.EatingDate.ToLongTimeString()</li>
+	}
+    <li>@u.Foods.ToArray()[u.Foods.Count - 1].EatingDate.ToLongTimeString() @u.Name ел спаржу уже @u.Foods.Count  раз</li>
+    }
+</ul>
