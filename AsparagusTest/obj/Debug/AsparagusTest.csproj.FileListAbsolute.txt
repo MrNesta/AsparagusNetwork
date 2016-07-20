@@ -185,3 +185,6 @@ F:\С#\AsparagusNetwork\AsparagusTest\bin\Microsoft.Extensions.Primitives.xml
 F:\С#\AsparagusNetwork\AsparagusTest\bin\Microsoft.Extensions.WebEncoders.xml
 F:\С#\AsparagusNetwork\AsparagusTest\bin\Microsoft.Extensions.WebEncoders.Core.xml
 F:\С#\AsparagusNetwork\AsparagusTest\bin\Microsoft.Net.Http.Headers.xml
+F:\С#\AsparagusNetwork\AsparagusNetwork\AsparagusTest\obj\Debug\AsparagusTest.csprojResolveAssemblyReference.cache
+F:\С#\AsparagusNetwork\AsparagusNetwork\AsparagusTest\obj\Debug\AsparagusTest.dll
+F:\С#\AsparagusNetwork\AsparagusNetwork\AsparagusTest\obj\Debug\AsparagusTest.pdb
