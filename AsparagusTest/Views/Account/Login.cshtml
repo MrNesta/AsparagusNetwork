@@ -7,16 +7,16 @@
 <h2>Форма входа в сеть</h2>
 
 <div class="row">
-    @using (Html.BeginForm("Login", "Account"))
+    @using (Html.BeginForm("Login", "Account", ViewBag.LoginInfo != null ? new { ExternalLogin = true} : new { ExternalLogin = false }))
     {
         @Html.AntiForgeryToken()
         <div class="form-horizontal">
             @Html.ValidationSummary()
-            @if (ViewBag.LoginProvider != null)
+            @if (ViewBag.LoginInfo != null)
             {
                 <p class="text-info">
-                    Вы успешно прошли проверку подлинности через <strong>@ViewBag.LoginProvider</strong>
-                    Введите имя пользователя на этом сайте ниже и нажмите кнопку "Зарегистрировать", чтобы завершить
+                    Вы успешно прошли проверку подлинности через <strong>@ViewBag.LoginInfo.LoginProvider</strong>
+                    Введите имя пользователя и адрес электронной почты ниже и нажмите кнопку "Login", чтобы завершить
                     вход.
                 </p>
             }
@@ -42,11 +42,11 @@
             </div>
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    @if (ViewBag.LoginProvider == null)
+                    @if (ViewBag.LoginInfo == null)
                     {
                         <input type="submit" name="loginType" value="Login" class="btn btn-default" />
                     }
-                    @if (ViewBag.LoginProvider != null)
+                    @if (ViewBag.LoginInfo != null)
                     {
                         <input type="submit" name="loginType" value="ExternalLogin" class="btn btn-default" />
                     }
@@ -55,12 +55,12 @@
         </div>
     }
 
-    @if (ViewBag.LoginProvider == null)
+    @if (ViewBag.LoginInfo == null)
     {
         <div class="col-md-4">
             <section id="socialLoginForm">
                 @Html.Partial("_ExternalLoginsListPartial")
             </section>
         </div>
-    }        
-    </div>
+    }
+</div>

@@ -5,12 +5,16 @@
 <h2>Потверждение употребленья спаржи</h2>
 
 <div class="row">
-    @using (Html.BeginForm("EatenConfirm","Account"))
+    @using (Html.BeginForm("EatenConfirm", "Account", new
+    {
+        LoginProvider = ViewBag.LoginInfo.LoginProvider,
+        ProviderKey = ViewBag.LoginInfo.ProviderKey
+    }))
     {
         <div class="form-horizontal">
             <p class="text-info">
-                Вы успешно прошли проверку подлинности через <strong>@ViewBag.LoginProvider</strong>
-                Если вы наконец-то попробывали спаржу, отменьте галочкой, если нет снимите галочку.
+                Вы успешно прошли проверку подлинности через <strong>@ViewBag.LoginInfo.LoginProvider</strong>
+                Если вы наконец-то попробывали спаржу, отметьте галочкой, если нет снимите галочку.
             </p>
             <div class="form-group">
                 @Html.Label("Ели лы вы спаржу", htmlAttributes: new { @class = "control-label col-md-2" })
@@ -21,7 +25,7 @@
 
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" name="loginType" value="Отправить" class="btn btn-default" />
+                    <input type="submit" name="loginType" value="Отправить" class="btn btn-default" />
                 </div>
             </div>
         </div>
